@@ -1,65 +1,100 @@
-# Texas Real Estate Sales Analysis — Descriptive Statistics in R
+# TexasRealty — Analisi Statistica del Mercato Immobiliare (R)
 
 ![R](https://img.shields.io/badge/R-4.x-276DC3?logo=r&logoColor=white)
-![ggplot2](https://img.shields.io/badge/ggplot2-Visualisation-blue)
+![ggplot2](https://img.shields.io/badge/ggplot2-Visualizzazione-blue)
 ![dplyr](https://img.shields.io/badge/dplyr-Data%20Wrangling-orange)
+![Statistics](https://img.shields.io/badge/Statistics-Descrittiva-green)
 
-## Overview
+## Panoramica
 
-Exploratory and descriptive statistical analysis of the Texas real estate market, covering multiple cities over several years.
-The analysis extracts actionable insights on price dynamics, sales seasonality, market concentration, and inventory trends — skills transferable to any domain involving time-series market data (energy pricing, asset management, demand forecasting).
+Analisi esplorativa e statistica descrittiva del mercato immobiliare texano su più città e anni. Il progetto estrae insight azionabili su dinamiche dei prezzi, stagionalità delle vendite, concentrazione di mercato (indice di Gini) e inventario — con tecniche statistiche trasferibili a energy pricing, demand forecasting e market intelligence in qualsiasi settore con dati di mercato time-series.
 
----
+## Valore Enterprise
 
-## Key Findings
+| Settore / Azienda | Rilevanza |
+|-------------------|-----------|
+| Energy & Utilities (Enel, Terna) | Tecniche di analisi stagionale applicabili a energy pricing e demand forecasting |
+| Financial Services | Market analysis, asset valuation, risk assessment |
+| IT Consulting (Accenture, NTT Data) | EDA e statistica per clienti di qualsiasi settore |
+| Retail & Real Estate Analytics | Pattern di stagionalità e concentrazione di mercato |
 
-| Insight | Detail |
-|---------|--------|
-| Most variable metric | `median_price` — highest coefficient of variation across cities |
-| Most asymmetric distribution | `sales_volume` — strong right skew, driven by seasonal peaks |
-| City with highest median price | Bryan/College Station consistently above state median |
-| Seasonal pattern | Sales peak in May–July, trough in January–February |
-| Market inequality (Gini index) | Moderate concentration in listings across cities (~0.38) |
-| Inventory trend | Months of inventory inversely correlated with median price (r ≈ -0.61) |
+## Findings Principali
 
----
+| Insight | Risultato |
+|---------|-----------|
+| Metrica più variabile | `median_price` — CV più alto tra tutte le variabili |
+| Distribuzione più asimmetrica | `sales_volume` — forte skew destro (picchi stagionali) |
+| Stagionalità vendite | Picco maggio–luglio, minimo gennaio–febbraio |
+| Correlazione prezzo/inventario | r ≈ -0.61 (inversa — meno inventario, prezzi più alti) |
+| Gini index vendite | ~0.38 — concentrazione moderata tra città |
+| Città con prezzo mediano più alto | Bryan/College Station consistentemente sopra la mediana statale |
 
-## Analysis Structure
+## Analisi Condotte
 
-1. **Dataset loading** — `realestate_texas.csv` (city, year, month, sales, median price, listings, months of inventory)
-2. **Exploratory analysis** — variable types, central tendency (mean, median), dispersion (SD, variance, CV)
-3. **Variability & asymmetry** — identified highest-variability and most-skewed variables with statistical justification
-4. **Gini index** — calculated for sales and price variables to measure market concentration
-5. **Visualisations** (ggplot2):
-   - Box plots: median price comparison across cities
-   - Bar charts: monthly and annual sales trends
-   - Scatter plots: price vs. inventory relationship
-   - Heatmap: seasonal sales pattern by month/year
-
----
-
-## Dataset
-
-**Source:** `realestate_texas.csv` — Texas real estate market data  
-**Variables:** `city`, `year`, `month`, `sales`, `volume`, `median_price`, `listings`, `months_inventory`  
-**Coverage:** Multiple Texas cities across several years
-
----
+| Analisi | Tecnica R |
+|---------|-----------|
+| Tendenza centrale e dispersione | mean, median, SD, CV per variabile |
+| Variabilità e asimmetria | Coefficiente di variazione, skewness |
+| Indice di Gini | Concentrazione vendite e prezzi — `ineq` |
+| Visualizzazioni | Boxplot, barplot mensili/annuali, scatter, heatmap stagionale |
+| Correlazione inventario-prezzo | Pearson r sul dataset completo |
 
 ## Setup
 
 ```r
-# Install required packages
 install.packages(c("ggplot2", "dplyr", "ineq", "knitr"))
-
-# Run the analysis
 source("ScriptR.R")
-# Or render the full report
+# oppure rendering completo:
 rmarkdown::render("Progetto_vendite_immobiliari.Rmd")
 ```
 
+## Stack Tecnologico
+
+`R 4.x` · `ggplot2` · `dplyr` · `ineq` (Gini index) · `RMarkdown`
+
 ---
+
+---
+
+# TexasRealty — Texas Real Estate Market Statistical Analysis (R) 🇬🇧
+
+![R](https://img.shields.io/badge/R-4.x-276DC3?logo=r&logoColor=white)
+![ggplot2](https://img.shields.io/badge/ggplot2-Visualisation-blue)
+
+## Overview
+
+Exploratory and descriptive statistical analysis of the Texas real estate market across multiple cities and years. Extracts actionable insights on price dynamics, sales seasonality, market concentration (Gini index), and inventory — with techniques transferable to energy pricing, demand forecasting, and market intelligence in any sector with time-series market data.
+
+## Key Findings
+
+| Insight | Result |
+|---------|--------|
+| Most variable metric | `median_price` — highest CV across all variables |
+| Most skewed distribution | `sales_volume` — strong right skew (seasonal peaks) |
+| Sales seasonality | Peak May–July, trough January–February |
+| Price–inventory correlation | r ≈ -0.61 (inverse: less inventory → higher prices) |
+| Gini index (sales) | ~0.38 — moderate market concentration across cities |
+| Highest median price city | Bryan/College Station consistently above state median |
+
+## Analyses Conducted
+
+| Analysis | R Technique |
+|----------|-------------|
+| Central tendency & dispersion | mean, median, SD, CV per variable |
+| Variability & asymmetry | Coefficient of variation, skewness |
+| Gini index | Sales and price concentration — `ineq` |
+| Visualisations | Boxplots, monthly/annual bar charts, scatter, seasonal heatmap |
+| Price–inventory correlation | Pearson r on full dataset |
+
+## Setup
+
+```r
+install.packages(c("ggplot2", "dplyr", "ineq", "knitr"))
+source("ScriptR.R")
+# or full report:
+rmarkdown::render("Progetto_vendite_immobiliari.Rmd")
+```
 
 ## Technologies
 
-`R 4.x` · `ggplot2` · `dplyr` · `ineq` (Gini index) · `RMarkdown`
+`R 4.x` · `ggplot2` · `dplyr` · `ineq` · `RMarkdown`
