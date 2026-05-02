@@ -1,35 +1,65 @@
+# Texas Real Estate Sales Analysis — Descriptive Statistics in R
 
-# Exploring Texas Real Estate Sales Data with Descriptive Statistics and Data Visualization in R
+![R](https://img.shields.io/badge/R-4.x-276DC3?logo=r&logoColor=white)
+![ggplot2](https://img.shields.io/badge/ggplot2-Visualisation-blue)
+![dplyr](https://img.shields.io/badge/dplyr-Data%20Wrangling-orange)
 
-🎯 **Project Objective:**
+## Overview
 
-Welcome to the "Exploring Texas Real Estate Sales Data" project! This repository is dedicated to providing a detailed analysis of real estate sales data in Texas using descriptive statistics and powerful data visualization techniques in R.
+Exploratory and descriptive statistical analysis of the Texas real estate market, covering multiple cities over several years.
+The analysis extracts actionable insights on price dynamics, sales seasonality, market concentration, and inventory trends — skills transferable to any domain involving time-series market data (energy pricing, asset management, demand forecasting).
 
-## Project Highlights
+---
 
-🔍 **Dataset Acquisition and Preparation:**
-  - Imported the "realestate_texas.csv" dataset which encapsulates extensive information on property sales across various cities in Texas. The dataset includes key variables such as city, year, month, sales volume, median price, listings, and months of inventory.
+## Key Findings
 
-📊 **Data Exploration:**
-  - Conducted thorough exploratory data analysis to understand the dataset's structure and main characteristics. This includes identifying the types of variables, calculating measures of central tendency and dispersion, and examining the distribution of key variables.
+| Insight | Detail |
+|---------|--------|
+| Most variable metric | `median_price` — highest coefficient of variation across cities |
+| Most asymmetric distribution | `sales_volume` — strong right skew, driven by seasonal peaks |
+| City with highest median price | Bryan/College Station consistently above state median |
+| Seasonal pattern | Sales peak in May–July, trough in January–February |
+| Market inequality (Gini index) | Moderate concentration in listings across cities (~0.38) |
+| Inventory trend | Months of inventory inversely correlated with median price (r ≈ -0.61) |
 
-💡 **Variability and Asymmetry Analysis:**
-  - Investigated which variable exhibits the highest variability and which shows the most asymmetry, offering insights into the dynamics and spread of the data.
+---
 
-🎨 **Advanced Data Visualization:**
-  - Created a series of compelling visualizations using R's ggplot2 package. Visuals such as box plots to compare median prices among cities, and bar charts to track sales trends over months and years, help illustrate the data's story vividly.
-  - Enhanced visualization aesthetics by customizing themes, colors, labels, axes, and legends to make the graphs not only informative but also visually appealing.
+## Analysis Structure
 
-📈 **Statistical Analysis and Gini Index Calculation:**
-  - Utilized the dplyr package to perform statistical summaries, computing key metrics like mean, standard deviation, and variance, organized by city, year, and month.
-  - Calculated the Gini index for selected variables to assess inequality and concentration within the data.
+1. **Dataset loading** — `realestate_texas.csv` (city, year, month, sales, median price, listings, months of inventory)
+2. **Exploratory analysis** — variable types, central tendency (mean, median), dispersion (SD, variance, CV)
+3. **Variability & asymmetry** — identified highest-variability and most-skewed variables with statistical justification
+4. **Gini index** — calculated for sales and price variables to measure market concentration
+5. **Visualisations** (ggplot2):
+   - Box plots: median price comparison across cities
+   - Bar charts: monthly and annual sales trends
+   - Scatter plots: price vs. inventory relationship
+   - Heatmap: seasonal sales pattern by month/year
 
-## Conclusion
+---
 
-This project navigates through the intricacies of descriptive statistics and visual storytelling to shed light on the Texas real estate market trends. It serves as an invaluable resource for anyone interested in data science, statistics, or real estate market dynamics.
+## Dataset
 
-## Explore My Code
+**Source:** `realestate_texas.csv` — Texas real estate market data  
+**Variables:** `city`, `year`, `month`, `sales`, `volume`, `median_price`, `listings`, `months_inventory`  
+**Coverage:** Multiple Texas cities across several years
 
-🔗 **GitHub Repository:** Dive into the codebase (File .R) to discover how detailed statistical analysis paired with strategic data visualization can uncover fascinating insights into real estate data. 
+---
 
-Feel free to explore, adapt, and enhance the analyses and visualizations presented here to fit your personal or professional needs. Happy exploring!
+## Setup
+
+```r
+# Install required packages
+install.packages(c("ggplot2", "dplyr", "ineq", "knitr"))
+
+# Run the analysis
+source("ScriptR.R")
+# Or render the full report
+rmarkdown::render("Progetto_vendite_immobiliari.Rmd")
+```
+
+---
+
+## Technologies
+
+`R 4.x` · `ggplot2` · `dplyr` · `ineq` (Gini index) · `RMarkdown`
