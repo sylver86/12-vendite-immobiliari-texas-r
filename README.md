@@ -1,100 +1,145 @@
-# TexasRealty — Analisi Statistica del Mercato Immobiliare (R)
+# 🏘️ TexasRealty: Strategic Market Intelligence & Economic Time-Series Analysis
 
-![R](https://img.shields.io/badge/R-4.x-276DC3?logo=r&logoColor=white)
-![ggplot2](https://img.shields.io/badge/ggplot2-Visualizzazione-blue)
-![dplyr](https://img.shields.io/badge/dplyr-Data%20Wrangling-orange)
-![Statistics](https://img.shields.io/badge/Statistics-Descrittiva-green)
+<p align="center">
+  <img src="https://img.shields.io/badge/R-4.x-276DC3?logo=r&logoColor=white" alt="R" />
+  <img src="https://img.shields.io/badge/ggplot2-Data--Viz-blue" alt="ggplot2" />
+  <img src="https://img.shields.io/badge/dplyr-Wrangling-orange" alt="dplyr" />
+  <img src="https://img.shields.io/badge/Statistics-Descriptive-green" alt="Statistics" />
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License" />
+</p>
 
-## Panoramica
+**TexasRealty** è un progetto di Market Intelligence avanzata focalizzato sull'analisi quantitativa del mercato immobiliare texano. Utilizzando il linguaggio **R**, il progetto implementa una pipeline di analisi esplorativa (EDA) e statistica descrittiva per estrarre insight strategici su dinamiche di prezzo, stagionalità e concentrazione di mercato. Le metodologie applicate sono direttamente trasferibili a scenari di Energy Pricing, Demand Forecasting e analisi macroeconomiche.
 
-Analisi esplorativa e statistica descrittiva del mercato immobiliare texano su più città e anni. Il progetto estrae insight azionabili su dinamiche dei prezzi, stagionalità delle vendite, concentrazione di mercato (indice di Gini) e inventario — con tecniche statistiche trasferibili a energy pricing, demand forecasting e market intelligence in qualsiasi settore con dati di mercato time-series.
+## 🏢 Valore Enterprise & Settori di Applicazione
 
-## Valore Enterprise
-
-| Settore / Azienda | Rilevanza |
+| Settore / Ambito | Rilevanza & Benefici |
 |-------------------|-----------|
-| Energy & Utilities (Enel, Terna) | Tecniche di analisi stagionale applicabili a energy pricing e demand forecasting |
-| Financial Services | Market analysis, asset valuation, risk assessment |
-| IT Consulting (Accenture, NTT Data) | EDA e statistica per clienti di qualsiasi settore |
-| Retail & Real Estate Analytics | Pattern di stagionalità e concentrazione di mercato |
-
-## Findings Principali
-
-| Insight | Risultato |
-|---------|-----------|
-| Metrica più variabile | `median_price` — CV più alto tra tutte le variabili |
-| Distribuzione più asimmetrica | `sales_volume` — forte skew destro (picchi stagionali) |
-| Stagionalità vendite | Picco maggio–luglio, minimo gennaio–febbraio |
-| Correlazione prezzo/inventario | r ≈ -0.61 (inversa — meno inventario, prezzi più alti) |
-| Gini index vendite | ~0.38 — concentrazione moderata tra città |
-| Città con prezzo mediano più alto | Bryan/College Station consistentemente sopra la mediana statale |
-
-## Analisi Condotte
-
-| Analisi | Tecnica R |
-|---------|-----------|
-| Tendenza centrale e dispersione | mean, median, SD, CV per variabile |
-| Variabilità e asimmetria | Coefficiente di variazione, skewness |
-| Indice di Gini | Concentrazione vendite e prezzi — `ineq` |
-| Visualizzazioni | Boxplot, barplot mensili/annuali, scatter, heatmap stagionale |
-| Correlazione inventario-prezzo | Pearson r sul dataset completo |
-
-## Setup
-
-```r
-install.packages(c("ggplot2", "dplyr", "ineq", "knitr"))
-source("ScriptR.R")
-# oppure rendering completo:
-rmarkdown::render("Progetto_vendite_immobiliari.Rmd")
-```
-
-## Stack Tecnologico
-
-`R 4.x` · `ggplot2` · `dplyr` · `ineq` (Gini index) · `RMarkdown`
+| **Real Estate & PropTech** | Analisi dei trend di mercato, valutazione degli asset e supporto al posizionamento strategico dei portafogli immobiliari. |
+| **Financial Services & Banking** | Valutazione del rischio di mercato, analisi delle garanzie collaterali e monitoraggio delle bolle speculative regionali. |
+| **Energy & Utilities** | Applicazione di modelli di stagionalità e variabilità per il forecasting della domanda e l'ottimizzazione del pricing dinamico. |
+| **Retail Expansion** | Supporto alla selezione dei siti (Site Selection) basato sulla densità delle vendite e sulla stabilità dei prezzi locali. |
 
 ---
 
+## 🎯 Executive Summary & Valore di Business
+TexasRealty trasforma dataset di mercato grezzi in una base di conoscenza strutturata per supportare decisioni d'investimento e piani industriali.
+
+### 🏛️ 1. Analisi delle Dinamiche Macroeconomiche
+* **Indice di Gini e Concentrazione:** Implementazione dell'Indice di Gini tramite il pacchetto `ineq` per quantificare la disparità nella distribuzione delle vendite tra le diverse città, identificando hub dominanti e mercati emergenti.
+* **Correlazione Prezzo-Inventario:** Quantificazione del legame inverso tra scorte e prezzi (Pearson r ≈ -0.61), fornendo un indicatore solido della pressione della domanda.
+
+### ⚙️ 2. Analisi delle Serie Temporali e Stagionalità
+* **Trend Stagionali:** Identificazione dei picchi operativi (maggio-luglio) e dei periodi di contrazione (gennaio-febbraio), permettendo l'ottimizzazione del timing per campagne marketing e lanci di prodotto.
+* **Asimmetria e Variabilità:** Analisi della Skewness e del Coefficiente di Variazione (CV) per valutare la volatilità del mercato, distinguendo tra stabilità strutturale e shock temporanei.
+
+### 🛡️ 3. Data Visualization Professionale (ggplot2)
+* **Visual Storytelling:** Creazione di asset grafici complessi (boxplot, heatmap stagionali, scatter plot di regressione) che facilitano la comunicazione di insight tecnici a stakeholder non tecnici.
+
 ---
 
-# TexasRealty — Texas Real Estate Market Statistical Analysis (R) 🇬🇧
+## 🏗️ Architettura del Workflow Analitico
 
-![R](https://img.shields.io/badge/R-4.x-276DC3?logo=r&logoColor=white)
-![ggplot2](https://img.shields.io/badge/ggplot2-Visualisation-blue)
+```mermaid
+graph TD
+    subgraph "Data Ingestion"
+        RAW[("🗄️ Texas Market Data<br/>(Time-Series CSV)")]
+    end
 
-## Overview
+    subgraph "Data Wrangling (Dplyr)"
+        CLN["🧹 Data Cleaning"]
+        AGG["📊 Temporal Aggregation<br/>(Yearly / Monthly)"]
+    end
 
-Exploratory and descriptive statistical analysis of the Texas real estate market across multiple cities and years. Extracts actionable insights on price dynamics, sales seasonality, market concentration (Gini index), and inventory — with techniques transferable to energy pricing, demand forecasting, and market intelligence in any sector with time-series market data.
+    subgraph "Statistical Analysis"
+        DES["📈 Descriptive Stats<br/>(Mean, SD, Skewness)"]
+        GIN["⚖️ Market Concentration<br/>(Gini Index)"]
+        COR["🔗 Correlation Analysis<br/>(Price vs Inventory)"]
+    end
 
-## Key Findings
+    subgraph "Visual Intelligence"
+        BOX["📦 Distribution Boxplots"]
+        SEA["📅 Seasonal Heatmaps"]
+        TRN["📉 Trend Analysis"]
+    end
 
-| Insight | Result |
-|---------|--------|
-| Most variable metric | `median_price` — highest CV across all variables |
-| Most skewed distribution | `sales_volume` — strong right skew (seasonal peaks) |
-| Sales seasonality | Peak May–July, trough January–February |
-| Price–inventory correlation | r ≈ -0.61 (inverse: less inventory → higher prices) |
-| Gini index (sales) | ~0.38 — moderate market concentration across cities |
-| Highest median price city | Bryan/College Station consistently above state median |
+    subgraph "Insights"
+        OUT["🎯 Market Strategy Report"]
+    end
 
-## Analyses Conducted
+    RAW --> CLN --> AGG
+    AGG --> DES & GIN & COR
+    DES & GIN & COR --> BOX & SEA & TRN
+    BOX & SEA & TRN --> OUT
 
-| Analysis | R Technique |
-|----------|-------------|
-| Central tendency & dispersion | mean, median, SD, CV per variable |
-| Variability & asymmetry | Coefficient of variation, skewness |
-| Gini index | Sales and price concentration — `ineq` |
-| Visualisations | Boxplots, monthly/annual bar charts, scatter, seasonal heatmap |
-| Price–inventory correlation | Pearson r on full dataset |
+    style RAW fill:#339af0,color:#fff
+    style GIN fill:#be4bdb,color:#fff
+    style OUT fill:#2ecc71,color:#fff
+```
 
-## Setup
+## 🛠️ Stack Tecnologico
+
+| Layer | Tecnologia | Ruolo |
+|:------|:-----------|:-----|
+| 📈 **Language** | R 4.x | Statistical Computing |
+| 📊 **Visualization** | ggplot2 | Professional Data Storytelling |
+| 🧹 **Data Manipulation** | dplyr | Advanced Data Wrangling |
+| ⚖️ **Economics** | ineq | Concentration & Inequality Metrics |
+| 📝 **Reporting** | RMarkdown | Reproducible Executive Reports |
+
+## 🚀 Setup
 
 ```r
+# Installazione pacchetti
 install.packages(c("ggplot2", "dplyr", "ineq", "knitr"))
+
+# Esecuzione dell'analisi
 source("ScriptR.R")
-# or full report:
+
+# Rendering del report finale
 rmarkdown::render("Progetto_vendite_immobiliari.Rmd")
 ```
 
-## Technologies
+<br><br>
+
+*Progettato e sviluppato da Eugenio Pasqua.*
+
+---
+
+# 🇬🇧 ENGLISH VERSION
+
+# 🏘️ TexasRealty: Strategic Market Intelligence & Economic Time-Series Analysis
+
+<p align="center">
+  <img src="https://img.shields.io/badge/R-4.x-276DC3?logo=r&logoColor=white" alt="R" />
+  <img src="https://img.shields.io/badge/ggplot2-Data--Viz-blue" alt="ggplot2" />
+</p>
+
+**TexasRealty** is an advanced market intelligence project focused on the quantitative analysis of the Texas real estate market. Using the **R** language, the project implements an exploratory analysis (EDA) and descriptive statistics pipeline to extract strategic insights into price dynamics, seasonality, and market concentration.
+
+## 🏢 Enterprise Value & Application Sectors
+
+| Sector / Domain | Relevance & Benefits |
+|-------------------|-----------|
+| **Real Estate & PropTech** | Market trend analysis, asset valuation, and strategic portfolio positioning support. |
+| **Energy & Utilities** | Applying seasonality and variability models for demand forecasting and dynamic pricing optimization. |
+| **Finance & Risk** | Regional speculative bubble monitoring and collateral asset analysis. |
+
+---
+
+## 🏗️ Analytical Workflow Architecture
+
+```mermaid
+graph TD
+    RAW[("🗄️ Market Data")] --> CLN["🧹 Wrangling & Cleaning"]
+    CLN --> STA["📊 Statistical Metrics<br/>(Gini, Correlation)"]
+    STA --> VIZ["📉 Visual Intelligence<br/>(Seasonality Heatmaps)"]
+    VIZ --> OUT["🎯 Strategy Report"]
+```
+
+## 🧰 Technology Stack
 
 `R 4.x` · `ggplot2` · `dplyr` · `ineq` · `RMarkdown`
+
+<br><br>
+
+*Designed and developed by Eugenio Pasqua.*
